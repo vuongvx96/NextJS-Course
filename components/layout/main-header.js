@@ -1,6 +1,6 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-import classes from './main-header.module.css'
+import classes from './main-header.module.css';
 
 function MainHeader() {
   return (
@@ -16,7 +16,7 @@ function MainHeader() {
         </ul>
       </nav>
     </header>
-  )
+  );
 }
 
-export default MainHeader
+export default MainHeader;

@@ -13,6 +13,7 @@
   color: white;
   font-family: 'Fira', sans-serif;
   height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
   color: #94fdfd;

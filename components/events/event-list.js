@@ -1,9 +1,9 @@
-import EventItem from './event-item'
-
-import classes from './event-list.module.css'
+import EventItem from './event-item';
+import classes from './event-list.module.css';
 
 function EventList(props) {
-  const { items } = props
+  const { items } = props;
+
   return (
     <ul className={classes.list}>
       {items.map((event) => (
@@ -17,7 +17,7 @@ function EventList(props) {
         />
       ))}
     </ul>
-  )
+  );
 }
 
-export default EventList
+export default EventList;
