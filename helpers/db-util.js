@@ -1,7 +1,9 @@
 import { MongoClient } from "mongodb";
 
 export async function getAllDocuments(client, collection, sort, filter = {}) {
-  const documents = await client.db().collection(collection)
+  const documents = await client
+    .db()
+    .collection(collection)
     .find(filter) // this changed - we use the "filter" parameter!
     .sort(sort)
     .toArray();
@@ -20,5 +22,5 @@ export async function connectDatabase() {
 export async function insertDocument(client, collection, document) {
   const db = client.db();
 
-  await db.collection(collection).insertOne(document);
+  return await db.collection(collection).insertOne(document);
 }

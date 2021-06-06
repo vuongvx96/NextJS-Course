@@ -38,6 +38,7 @@ async function handler(req, res) {
       newComment.id = result.insertedId;
       res.status(201).json({ message: "Added comment.", comment: newComment });
     } catch (error) {
+      console.log(error);
       res.status(500).json({ message: "Inserting comment failed!" });
     }
   }

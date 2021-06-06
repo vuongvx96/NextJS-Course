@@ -1,7 +1,12 @@
 {
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/_error": "pages/_error.js",
+  "/api/comments/[eventId]": "pages/api/comments/[eventId].js",
+  "/api/newsletter": "pages/api/newsletter.js",
+  "/events/[...slug]": "pages/events/[...slug].html",
   "/events/[eventId]": "pages/events/[eventId].js",
-  "/": "pages/index.js"
+  "/events": "pages/events.js",
+  "/": "pages/index.js",
+  "/_error": "pages/_error.js",
+  "/404": "pages/404.html"
 }
