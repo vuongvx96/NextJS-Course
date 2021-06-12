@@ -198,106 +198,70 @@ var external_react_ = __webpack_require__("cDcd");
 var next_link = __webpack_require__("YFqc");
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 
-// EXTERNAL MODULE: ./components/layout/main-header.module.css
-var main_header_module = __webpack_require__("2FXi");
-var main_header_module_default = /*#__PURE__*/__webpack_require__.n(main_header_module);
+// EXTERNAL MODULE: ./components/layout/logo.module.css
+var logo_module = __webpack_require__("CJ8n");
+var logo_module_default = /*#__PURE__*/__webpack_require__.n(logo_module);
 
-// CONCATENATED MODULE: ./components/layout/main-header.js
-
-
+// CONCATENATED MODULE: ./components/layout/logo.js
 
 
 
-function MainHeader() {
+function Logo() {
+  return /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+    className: logo_module_default.a.logo,
+    children: "Max' Next Blog"
+  });
+}
+
+/* harmony default export */ var logo = (Logo);
+// EXTERNAL MODULE: ./components/layout/main-navigation.module.css
+var main_navigation_module = __webpack_require__("dbdp");
+var main_navigation_module_default = /*#__PURE__*/__webpack_require__.n(main_navigation_module);
+
+// CONCATENATED MODULE: ./components/layout/main-navigation.js
+
+
+
+
+
+
+function MainNavigation() {
   return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("header", {
-    className: main_header_module_default.a.header,
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-      className: main_header_module_default.a.logo,
-      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
-        href: "/",
-        children: "NextEvents"
+    className: main_navigation_module_default.a.header,
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
+      href: "/",
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
+        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(logo, {})
       })
     }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("nav", {
-      className: main_header_module_default.a.navigation,
-      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("ul", {
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
+      children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("ul", {
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
           children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
-            href: "/events",
-            children: "Browse All Events"
+            href: "/posts",
+            children: "Posts"
           })
-        })
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
+            href: "/contact",
+            children: "Contact"
+          })
+        })]
       })
     })]
   });
 }
 
-/* harmony default export */ var main_header = (MainHeader);
-// EXTERNAL MODULE: ./components/ui/notification.module.css
-var notification_module = __webpack_require__("3YlN");
-var notification_module_default = /*#__PURE__*/__webpack_require__.n(notification_module);
-
-// EXTERNAL MODULE: ./store/notification-context.js
-var notification_context = __webpack_require__("haOO");
-
-// CONCATENATED MODULE: ./components/ui/notification.js
-
-
-
-
-
-
-function Notification(props) {
-  const notificationCtx = Object(external_react_["useContext"])(notification_context["b" /* default */]);
-  const {
-    title,
-    message,
-    status
-  } = props;
-  let statusClasses = "";
-
-  if (status === "success") {
-    statusClasses = notification_module_default.a.success;
-  }
-
-  if (status === "error") {
-    statusClasses = notification_module_default.a.error;
-  }
-
-  if (status === "pending") {
-    statusClasses = notification_module_default.a.pending;
-  }
-
-  const activeClasses = `${notification_module_default.a.notification} ${statusClasses}`;
-  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-    className: activeClasses,
-    onClick: notificationCtx.hideNotification,
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h2", {
-      children: title
-    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
-      children: message
-    })]
-  });
-}
-
-/* harmony default export */ var notification = (Notification);
+/* harmony default export */ var main_navigation = (MainNavigation);
 // CONCATENATED MODULE: ./components/layout/layout.js
 
 
 
 
 
-
-
 function Layout(props) {
-  const notificationCtx = Object(external_react_["useContext"])(notification_context["b" /* default */]);
-  const activeNotification = notificationCtx.notification;
   return /*#__PURE__*/Object(jsx_runtime_["jsxs"])(external_react_["Fragment"], {
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(main_header, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])("main", {
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(main_navigation, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])("main", {
       children: props.children
-    }), activeNotification && /*#__PURE__*/Object(jsx_runtime_["jsx"])(notification, {
-      title: activeNotification.title,
-      message: activeNotification.message,
-      status: activeNotification.status
     })]
   });
 }
@@ -320,25 +284,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 function MyApp({
   Component,
   pageProps
 }) {
-  return /*#__PURE__*/Object(jsx_runtime_["jsx"])(notification_context["a" /* NotificationContextProvider */], {
-    children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])(layout, {
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])(head_default.a, {
-        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("title", {
-          children: "Next Events"
-        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-          name: "description",
-          content: "NextJS Events"
-        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
-          name: "viewport",
-          content: "initial-scale=1.0, width=device-width"
-        })]
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(Component, _objectSpread({}, pageProps))]
-    })
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])(layout, {
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(head_default.a, {
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1"
+      })
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(Component, _objectSpread({}, pageProps))]
   });
 }
 
@@ -407,19 +363,6 @@ module.exports = _interopRequireWildcard;
 
 /***/ }),
 
-/***/ "2FXi":
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {
-	"header": "main-header_header__X_-dA",
-	"logo": "main-header_logo__2Z9Cv",
-	"navigation": "main-header_navigation__ffOWC"
-};
-
-
-/***/ }),
-
 /***/ "3WeD":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -473,20 +416,6 @@ function assign(target, ...searchParamsList) {
   });
   return target;
 }
-
-/***/ }),
-
-/***/ "3YlN":
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {
-	"notification": "notification_notification__3oWBf",
-	"pending": "notification_pending__1zWgb",
-	"success": "notification_success__3Hbna",
-	"error": "notification_error__1LYKp"
-};
-
 
 /***/ }),
 
@@ -649,6 +578,17 @@ function formatUrl(urlObj) {
   search = search.replace('#', '%23');
   return `${protocol}${host}${pathname}${search}${hash}`;
 }
+
+/***/ }),
+
+/***/ "CJ8n":
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+	"logo": "logo_logo__28eJO"
+};
+
 
 /***/ }),
 
@@ -1367,6 +1307,18 @@ function mitt() {
 
   };
 }
+
+/***/ }),
+
+/***/ "dbdp":
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+	"header": "main-navigation_header__1muvD",
+	"active": "main-navigation_active__3BRtK"
+};
+
 
 /***/ }),
 
@@ -2649,61 +2601,6 @@ function parseRelativeUrl(url, base) {
     href: href.slice(globalBase.origin.length)
   };
 }
-
-/***/ }),
-
-/***/ "haOO":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotificationContextProvider; });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("F5FC");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const NotificationContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])({
-  notification: null,
-  // { title, message, status }
-  showNotification: function (notificationData) {},
-  hideNotification: function (notificationData) {}
-});
-function NotificationContextProvider(props) {
-  const {
-    0: activeNotification,
-    1: setActiveNotification
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])();
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    if (activeNotification && (activeNotification.status === "success" || activeNotification.status === "error")) {
-      const timer = setTimeout(() => {
-        setActiveNotification(null);
-      }, 3000);
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [activeNotification]);
-
-  function showNotificationHandler(notificationData) {
-    setActiveNotification(notificationData);
-  }
-
-  function hideNotificationHandler() {
-    setActiveNotification(null);
-  }
-
-  const context = {
-    notification: activeNotification,
-    showNotification: showNotificationHandler,
-    hideNotification: hideNotificationHandler
-  };
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(NotificationContext.Provider, {
-    value: context,
-    children: props.children
-  });
-}
-/* harmony default export */ __webpack_exports__["b"] = (NotificationContext);
 
 /***/ }),
 
